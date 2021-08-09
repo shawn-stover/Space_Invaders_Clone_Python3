@@ -62,5 +62,17 @@ turtle.listen()
 turtle.onkey(move_left, 'a')
 turtle.onkey(move_right, 'd')
 
+# Create Enemy
+enemy = turtle.Turtle()
+enemy.color('red')
+enemy.shape('circle')
+enemy.penup()
+enemy.speed(0)
+enemy.setposition(-200, 250)
+
+# Set enemy speed
+enemyspeed = 2
+
+# Delay for testing
 delay = input('Press Enter or Return to exit.')
 
