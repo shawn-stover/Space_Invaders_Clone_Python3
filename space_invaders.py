@@ -3,7 +3,9 @@ import turtle
 import os
 
 # Set up the screen
+WIDTH, HEIGHT = 600, 600
 playWindow = turtle.Screen()
+playWindow.setup(WIDTH + 4, HEIGHT + 4)
 playWindow.bgcolor('black')
 playWindow.title('Space Invaders Clone')
 
