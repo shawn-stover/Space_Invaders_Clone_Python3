@@ -182,7 +182,12 @@ while True:
             x = random.randint(-200, 200)
             y = random.randint(100, 250)
             enemy.setposition(x, y)
-        
+            # Update the score
+            score += 10
+            scorestring = 'Score: %s' %score
+            score_pen.clear()
+            score_pen.write(scorestring, False, align='left', font=('Arial', 14, 'normal'))
+
         if isCollision(player, enemy):
             # Hide turtles
             player.hideturtle()
