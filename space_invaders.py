@@ -38,6 +38,9 @@ def move_left():
     x = player.xcor()
     # Change player position by the value of playerspeed
     x -= playerspeed
+    # Check to make sure player stays inside boundaries
+    if x < -280:
+        x = -280
     # Set player x to the new coordinate
     player.setx(x)
 
@@ -46,6 +49,9 @@ def move_right():
     x = player.xcor()
     # Change player position by the value of playerspeed
     x += playerspeed
+    # Check to make sure player stays inside boundaries
+    if x > 280:
+        x = 280
     # Set player x to the new coordinate
     player.setx(x) 
 
