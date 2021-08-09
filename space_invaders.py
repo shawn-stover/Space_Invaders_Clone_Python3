@@ -32,5 +32,27 @@ player.setheading(90)
 # Set player speed
 playerspeed = 15
 
+# Functions for player movement
+def move_left():
+    # Get player coordinate
+    x = player.xcor()
+    # Change player position by the value of playerspeed
+    x -= playerspeed
+    # Set player x to the new coordinate
+    player.setx(x)
+
+def move_right():
+    # Get player coordinate
+    x = player.xcor()
+    # Change player position by the value of playerspeed
+    x += playerspeed
+    # Set player x to the new coordinate
+    player.setx(x) 
+
+# Create keyboard bindings
+turtle.listen()
+turtle.onkey(move_left, 'a')
+turtle.onkey(move_right, 'd')
+
 delay = input('Press Enter or Return to exit.')
 
