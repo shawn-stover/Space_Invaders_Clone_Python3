@@ -73,6 +73,26 @@ enemy.setposition(-200, 250)
 # Set enemy speed
 enemyspeed = 2
 
+# main Game Loop
+while True:
+    # Move enemy right
+    x = enemy.xcor()
+    x += enemyspeed
+    enemy.setx(x)
+
+    # Move enemy back opposite direction when border ir reached
+    if x > 280:
+        y = enemy.ycor()
+        y -= 40
+        enemyspeed *= -1
+        enemy.sety(y)
+
+    if x < -280:
+        y = enemy.ycor()
+        y -= 40
+        enemyspeed *= -1
+        enemy.sety(y)
+
 # Delay for testing
 delay = input('Press Enter or Return to exit.')
 
