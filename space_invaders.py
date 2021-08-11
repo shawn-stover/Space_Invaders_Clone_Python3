@@ -76,7 +76,8 @@ player.setposition(0, -250)
 player.setheading(90)
 player.speed = 0
 
-# Functions for player movement
+# Functions
+
 
 def move_left():
     player.speed = -3
@@ -138,6 +139,7 @@ def play_sound(sound_file, time=0):
 # Number of enemies
 number_of_enemies = 30
 
+
 # Create an empty list of enemies
 enemies = []
 
@@ -197,7 +199,7 @@ playWindow.onkeypress(fire_weapon, 'space')
 play_sound('bgm.mp3')
 
 # Main Game Loop
-while True:
+while True:  # noqa: C901
     playWindow.update()
     move_player()
 
