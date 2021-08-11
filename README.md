@@ -5,4 +5,4 @@ Move Left: A
 Move Right: D
 Fire: Space
 
-The current iteration only has one level and the sound files are not working currently.
+The current iteration only has one level and the sound files are not working currently. I need to implement volume control.
