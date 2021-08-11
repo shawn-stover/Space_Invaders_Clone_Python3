@@ -6,10 +6,7 @@ import platform
 
 # if on Windows, import winsound
 if platform.system() == 'Windows':
-    try:
-        import winsound
-    except:
-        ('Winsound module not found')
+    import winsound
 
 
 # Set up the screen
@@ -26,7 +23,7 @@ playWindow.register_shape('space_invader.gif')
 playWindow.register_shape('ship.gif')
 
 # Draw game border
-# border.pen creates a pen to draw 
+# border.pen creates a pen to draw
 # penup and pendown control whether the pen is lifted or placed
 # fd controls how far the pen moves
 # lt turns the pen that many degrees to the left
@@ -80,11 +77,14 @@ player.setheading(90)
 player.speed = 0
 
 # Functions for player movement
+
 def move_left():
     player.speed = -3
 
+
 def move_right():
     player.speed = 3
+
 
 def move_player():
     x = player.xcor()
@@ -92,32 +92,35 @@ def move_player():
     if x < -280:
         x = -280
     if x > 280:
-        x = 280 
-    player.setx(x)       
+        x = 280
+    player.setx(x)
+
 
 def fire_weapon():
     # Declare weapon state as a global if it needs to be changed
     global weaponstate
     if weaponstate == 'ready':
         play_sound('shoot.wav')
-        
+
         # Set weaponstate to fire when fired
         weaponstate = 'fire'
-        
+
         # Move bullet to just above player
         x = player.xcor()
         y = player.ycor() + 10
         weapon.setposition(x, y)
         weapon.showturtle()
 
+
 def isCollision(turt1, turt2):
-    distance = math.sqrt(math.pow(turt1.xcor() - turt2.xcor(),2) + math.pow(turt1.ycor() - turt2.ycor(), 2))
+    distance = math.sqrt(math.pow(turt1.xcor() - turt2.xcor(), 2) + math.pow(turt1.ycor() - turt2.ycor(), 2))
     if distance < 15:
         return True
     else:
         return False
 
-def play_sound(sound_file, time = 0):
+
+def play_sound(sound_file, time=0):
     # Windows
     if platform.system == 'Windows':
         winsound.PlaySound(sound_file, winsound.SND_ASYNC)
@@ -199,7 +202,7 @@ while True:
     move_player()
 
     for enemy in enemies:
-        
+
         # Move enemy right
         x = enemy.xcor()
         x += enemyspeed
@@ -221,7 +224,7 @@ while True:
                 y = e.ycor()
                 y -= 40
                 e.sety(y)
-            # Change direction    
+            # Change direction
             enemyspeed *= -1
 
         # Check for a collision between the weapon and the enemy
@@ -252,7 +255,7 @@ while True:
         if len(enemies) == 0:
             level += 1
             enemyspeed *= 1.05
-    
+
     # Move the player weapon
     if weaponstate == "fire":
         y = weapon.ycor()
