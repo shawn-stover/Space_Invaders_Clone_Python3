@@ -136,9 +136,9 @@ def play_sound(sound_file, time=0):
     if time > 0:
         turtle.ontimer(lambda: play_sound(sound_file, time), t=int(time * 1000))
 
+
 # Number of enemies
 number_of_enemies = 30
-
 
 # Create an empty list of enemies
 enemies = []
